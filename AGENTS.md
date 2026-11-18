@@ -28,3 +28,9 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Seat, room and booking data is front-end sample data (`src/data/sample-data.ts`) held in a React context store persisted to localStorage (`src/lib/seat-store.tsx`); no backend yet, because the brief asked for a frontend-only hackathon demo.
+- Booking rules live as pure functions in `src/lib/booking.ts` with tests in `src/lib/booking.test.ts`, so the store and UI never re-implement them.
+- Seat status colors come only from the `seat-*` tokens in `src/styles.css` via `src/lib/status.ts`, so the green/red/grey meaning stays consistent everywhere.
